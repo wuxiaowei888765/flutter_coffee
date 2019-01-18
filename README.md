@@ -1,6 +1,7 @@
 # 一个仿luckin coffee的flutter APP（仅供学习布局使用）
-## <font color=#FF0000>  禁止进行商业用途，如果luckin coffee追究，随时删除
- </font>  
+
+## <font color=#FF0000>  禁止进行商业用途，如果luckin coffee追究，随时删除</font>  
+
 ![image](https://github.com/wuxiaowei888765/flutter_coffee/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20Max%20-%202019-01-18%20at%2010.03.26.png?raw=true)
 ![image](https://github.com/wuxiaowei888765/flutter_coffee/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20Max%20-%202019-01-18%20at%2010.03.29.png?raw=true)
 
