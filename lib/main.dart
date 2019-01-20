@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/pages/Mine.dart';
 import 'package:flutter_app/pages/ShoppingCart.dart';
 import './pages/FirstTab.dart';
-import './pages/SecondTab.dart';
+import './pages/ShopTab.dart';
 import './pages/OrderList.dart';
 
 void main(){
@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           controller: tabcontroller,
           children: <Widget>[
             new FirstTab(),
-            new SecondTab(),
+            new ShopTab(),
             new OrderList(),
             new ShoppingCart(),
             new Mine(),
