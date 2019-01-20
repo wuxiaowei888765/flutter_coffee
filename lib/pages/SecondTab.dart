@@ -10,10 +10,12 @@ class _SecondTabState extends State<SecondTab> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('分类'),
+        backgroundColor: Color(0xffffffff),
+        brightness: Brightness.light,
+        title: new Text('选择咖啡和小食', style: new TextStyle(color: Color(0xff000000))),
       ),
       body: new Center(
-        child: new Text('Second'),
+
       ),
     );
   }

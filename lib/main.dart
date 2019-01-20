@@ -3,7 +3,7 @@ import 'package:flutter_app/pages/Mine.dart';
 import 'package:flutter_app/pages/ShoppingCart.dart';
 import './pages/FirstTab.dart';
 import './pages/SecondTab.dart';
-import './pages/ThirdTab.dart';
+import './pages/OrderList.dart';
 
 void main(){
   runApp(
@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           children: <Widget>[
             new FirstTab(),
             new SecondTab(),
-            new ThirdTab(),
+            new OrderList(),
             new ShoppingCart(),
             new Mine(),
           ],

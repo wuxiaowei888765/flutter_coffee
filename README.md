@@ -2,6 +2,8 @@
 
 ## <font color=#FF0000>  禁止进行商业用途，如果luckin coffee追究，随时删除</font>  
 
+<img width="281" height="609" src="https://github.com/wuxiaowei888765/flutter_coffee/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20Max%20-%202019-01-20%20at%2021.28.54.png?raw=true"/>
+
 <img width="281" height="609" src="https://github.com/wuxiaowei888765/flutter_coffee/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20Max%20-%202019-01-18%20at%2017.44.37.png?raw=true"/>
 
 <img width="281" height="609" src="https://github.com/wuxiaowei888765/flutter_coffee/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20Max%20-%202019-01-18%20at%2010.03.29.png?raw=true"/>
