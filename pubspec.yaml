@@ -59,6 +59,7 @@ flutter:
    - images/icon_commodity_marketing.png
    - images/coffeecool_add_icon.png
    - images/coffeecool_sub_icon.png
+   - images/order_no.png
   # To add assets to your application, add an assets section, like this:
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.

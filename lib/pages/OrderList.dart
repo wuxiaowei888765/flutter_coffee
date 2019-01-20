@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/pages/order/AllOrder.dart';
+import 'package:flutter_app/pages/order/OrderDone.dart';
+import 'package:flutter_app/pages/order/OrderUnDone.dart';
 
 class OrderList extends StatefulWidget {
   @override
@@ -35,8 +37,8 @@ class _OrderListState extends State<OrderList> {
         body: new TabBarView(
           children: <Widget>[
             new AllOrder(),
-            new Center(child: new Text('船')),
-            new Center(child: new Text('巴士')),
+            new OrderUnDone(),
+            new OrderDone(),
           ],
         ),
       ),
