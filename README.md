@@ -3,19 +3,19 @@
 ## <font color=#FF0000>  禁止进行商业用途，如果luckin coffee追究，随时删除</font> 
  
 <figure class="half">
-<img width="240" height="405" src="https://github.com/wuxiaowei888765/flutter_coffee/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20Max%20-%202019-01-20%20at%2021.28.54.png?raw=true"/>  <img width="240" height="405" src="https://github.com/wuxiaowei888765/flutter_coffee/blob/master/516E11F7E402428573ACD100C42030E8.png?raw=true"/>
+<img width="280" height="610" src="https://github.com/wuxiaowei888765/flutter_coffee/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20Max%20-%202019-01-20%20at%2021.28.54.png?raw=true"/>  <img width="280" height="610" src="https://github.com/wuxiaowei888765/flutter_coffee/blob/master/516E11F7E402428573ACD100C42030E8.png?raw=true"/>
 </figure>
 
 <figure class="half">
-<img width="240" height="405" src="https://github.com/wuxiaowei888765/flutter_coffee/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20Max%20-%202019-01-18%20at%2017.44.37.png?raw=true"/>  <img width="240" height="405" src="https://github.com/wuxiaowei888765/flutter_coffee/blob/master/D5745286DB2E76E0D6DB7F411F1022C8.png?raw=true"/>
+<img width="280" height="610" src="https://github.com/wuxiaowei888765/flutter_coffee/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20Max%20-%202019-01-18%20at%2017.44.37.png?raw=true"/>  <img width="280" height="610" src="https://github.com/wuxiaowei888765/flutter_coffee/blob/master/D5745286DB2E76E0D6DB7F411F1022C8.png?raw=true"/>
 </figure>
 
 <figure class="half">
-<img width="240" height="405" src="https://github.com/wuxiaowei888765/flutter_coffee/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20Max%20-%202019-01-18%20at%2010.03.29.png?raw=true"/>  <img width="240" height="405" src="https://github.com/wuxiaowei888765/flutter_coffee/blob/master/925CED689E188558CFBC02C307F0A0DC.png?raw=true"/>
+<img width="280" height="610" src="https://github.com/wuxiaowei888765/flutter_coffee/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20Max%20-%202019-01-18%20at%2010.03.29.png?raw=true"/>  <img width="280" height="610" src="https://github.com/wuxiaowei888765/flutter_coffee/blob/master/925CED689E188558CFBC02C307F0A0DC.png?raw=true"/>
 </figure>
 
 <figure class="half">
-<img width="240" height="405" src="https://github.com/wuxiaowei888765/flutter_coffee/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20Max%20-%202019-01-20%20at%2022.23.03.png?raw=true"/>  <img width="240" height="405" src="https://github.com/wuxiaowei888765/flutter_coffee/blob/master/8204F7537539BDBD3D204ABFFA395558.png?raw=true"/>
+<img width="280" height="610" src="https://github.com/wuxiaowei888765/flutter_coffee/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%20XS%20Max%20-%202019-01-20%20at%2022.23.03.png?raw=true"/>  <img width="280" height="610" src="https://github.com/wuxiaowei888765/flutter_coffee/blob/master/8204F7537539BDBD3D204ABFFA395558.png?raw=true"/>
 </figure>
 
 ## <font color=#1E90FF>  这个软件抓包无法获取到接口数据，目前只能先搭建界面 </font>
