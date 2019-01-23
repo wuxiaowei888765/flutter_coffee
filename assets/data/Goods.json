@@ -1,0 +1,200 @@
+{
+  "goods": [
+    {
+      "tagIndex": "猜你喜欢",
+      "name": "榛果拿铁"
+    },
+    {
+      "tagIndex": "猜你喜欢",
+      "name": "圣诞姜饼人拿铁"
+    },
+    {
+      "tagIndex": "猜你喜欢",
+      "name": "加糖玛奇朵"
+    },
+    {
+      "tagIndex": "人气Top",
+      "name": "榛果拿铁"
+    },
+    {
+      "tagIndex": "人气Top",
+      "name": "圣诞姜饼人拿铁"
+    },
+    {
+      "tagIndex": "大师咖啡",
+      "name": "拿铁"
+    },
+    {
+      "tagIndex": "大师咖啡",
+      "name": "香草拿铁"
+    },
+    {
+      "tagIndex": "大师咖啡",
+      "name": "焦糖拿铁"
+    },
+    {
+      "tagIndex": "大师咖啡",
+      "name": "标准美式"
+    },
+    {
+      "tagIndex": "大师咖啡",
+      "name": "焦糖标准美式"
+    },
+    {
+      "tagIndex": "大师咖啡",
+      "name": "焦糖加浓美式"
+    },
+    {
+      "tagIndex": "大师咖啡",
+      "name": "黑金气泡美式"
+    },
+    {
+      "tagIndex": "大师咖啡",
+      "name": "奥瑞白"
+    },
+    {
+      "tagIndex": "大师咖啡",
+      "name": "卡布奇诺"
+    },
+    {
+      "tagIndex": "大师咖啡",
+      "name": "焦糖玛奇朵"
+    },
+    {
+      "tagIndex": "大师咖啡",
+      "name": "摩卡"
+    },
+    {
+      "tagIndex": "零度拿铁",
+      "name": "红茶拿铁"
+    },
+    {
+      "tagIndex": "零度拿铁",
+      "name": "抹茶拿铁"
+    },
+    {
+      "tagIndex": "瑞纳冰",
+      "name": "小雪荔枝瑞纳冰"
+    },
+    {
+      "tagIndex": "瑞纳冰",
+      "name": "卡布奇诺瑞纳冰"
+    },
+    {
+      "tagIndex": "瑞纳冰",
+      "name": "巧克力瑞纳冰"
+    },
+    {
+      "tagIndex": "瑞纳冰",
+      "name": "抹茶瑞纳冰"
+    },
+    {
+      "tagIndex": "经典饮品",
+      "name": "石榴蔓越莓苏打水"
+    },
+    {
+      "tagIndex": "经典饮品",
+      "name": "柑橘百香果"
+    },
+    {
+      "tagIndex": "经典饮品",
+      "name": "热巧克力"
+    },
+    {
+      "tagIndex": "经典饮品",
+      "name": "纯牛奶"
+    },
+    {
+      "tagIndex": "经典饮品",
+      "name": "依云矿泉水330ml"
+    },
+    {
+      "tagIndex": "经典饮品",
+      "name": "巴黎水330ml"
+    },
+    {
+      "tagIndex": "BOSS午餐",
+      "name": "金枪鱼谷物沙拉"
+    },
+    {
+      "tagIndex": "BOSS午餐",
+      "name": "川味鸡丝拌面套餐"
+    },
+    {
+      "tagIndex": "BOSS午餐",
+      "name": "樱桃番茄五谷食盒"
+    },
+    {
+      "tagIndex": "BOSS午餐",
+      "name": "经典牛肉土豆泥沙拉"
+    },
+    {
+      "tagIndex": "健康轻食",
+      "name": "火腿芝士羊角"
+    },
+    {
+      "tagIndex": "健康轻食",
+      "name": "蔓越莓司康"
+    },
+    {
+      "tagIndex": "健康轻食",
+      "name": "巧克力司康"
+    },
+    {
+      "tagIndex": "健康轻食",
+      "name": "巧克力麦芬"
+    },
+    {
+      "tagIndex": "健康轻食",
+      "name": "蓝莓麦芬"
+    },
+    {
+      "tagIndex": "健康轻食",
+      "name": "香椰提子麦芬"
+    },
+    {
+      "tagIndex": "健康轻食",
+      "name": "香蕉核桃麦芬"
+    },
+    {
+      "tagIndex": "健康轻食",
+      "name": "火腿金枪鱼双拼三明治"
+    },
+    {
+      "tagIndex": "健康轻食",
+      "name": "提拉米苏蛋糕"
+    },
+    {
+      "tagIndex": "健康轻食",
+      "name": "黑森林蛋糕"
+    },
+    {
+      "tagIndex": "健康轻食",
+      "name": "芝士蓝莓蛋糕"
+    },
+    {
+      "tagIndex": "健康轻食",
+      "name": "夏威夷菠萝火腿卷"
+    },
+    {
+      "tagIndex": "鲜榨果蔬汁",
+      "name": "NFC鲜榨橙汁"
+    },
+    {
+      "tagIndex": "鲜榨果蔬汁",
+      "name": "猕猴桃复合果汁"
+    },
+    {
+      "tagIndex": "鲜榨果蔬汁",
+      "name": "NFC鲜榨蓝莓草莓混合果汁"
+    },
+    {
+      "tagIndex": "鲜榨果蔬汁",
+      "name": "NFC鲜榨荔枝汁"
+    },
+    {
+      "tagIndex": "鲜榨果蔬汁",
+      "name": "NFC鲜榨芒果混合果汁"
+    }
+  ]
+}

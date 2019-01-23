@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   void initState() {
     super.initState();
     tabcontroller = new TabController(
-        length: 5,   //Tab页的个数
+        length: appBottomTitles.length,   //Tab页的个数
         vsync: this //动画效果的异步处理，默认格式
     );
 
@@ -46,6 +46,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     return new Scaffold(
         body: new TabBarView(
           controller: tabcontroller,
+          physics: new NeverScrollableScrollPhysics(),
           children: <Widget>[
             new FirstTab(),
             new ShopTab(),
@@ -57,7 +58,9 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         bottomNavigationBar: new Material(
           //底部栏整体的颜色
           color: Colors.white,
+          elevation: 0,
           child: new TabBar(
+            indicatorColor:Colors.white,
             controller: tabcontroller,
             tabs: <Tab>[
               new Tab(text:appBottomTitles[0],icon: getTabIcon(0)),
