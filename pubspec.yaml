@@ -61,6 +61,10 @@ flutter:
    - images/coffeecool_add_icon.png
    - images/coffeecool_sub_icon.png
    - images/order_no.png
+   - icon_order_now_new.png
+   - icon_promo_new.png
+   - icon_send_coffee_new.png
+   - icon_enterprise_new.png
 
    - assets/data/Goods.json
   # To add assets to your application, add an assets section, like this:

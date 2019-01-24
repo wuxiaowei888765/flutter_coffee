@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/widgets/Line.dart';
+import 'package:flutter_app/widgets/MainItem.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
 class MainTab extends StatefulWidget {
@@ -107,16 +109,30 @@ class _MainTabState extends State<MainTab> {
                     )
                   ],
                 ),
-                new Offstage(
-                  offstage: false,
-                  child: new Container(
+                new Line(
+                    showLine: false,
                     margin: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-                    child: new Align(
-                      alignment: FractionalOffset.bottomCenter,
-                      child:
-                          new Container(color: Color(0xff000000), height: 0.1),
-                    ),
-                  ),
+                    color: Color(0xff000000),
+                    height: 0.1),
+                MainItem(
+                  chineseTile: "现在下单",
+                  englishTile: "ORDER NOW",
+                  imagePath: "icon_order_now_new.png",
+                ),
+                MainItem(
+                  chineseTile: "咖啡钱包",
+                  englishTile: "COFFEE WALLET",
+                  imagePath: "icon_promo_new.png",
+                ),
+                MainItem(
+                  chineseTile: "送TA咖啡",
+                  englishTile: "SEND COFFEE",
+                  imagePath: "icon_send_coffee_new.png",
+                ),
+                MainItem(
+                  chineseTile: "企业账户",
+                  englishTile: "ENTERPRISE ACCOUNT",
+                  imagePath: "icon_enterprise_new.png",
                 ),
               ],
             )
