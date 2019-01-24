@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/pages/Mine.dart';
 import 'package:flutter_app/pages/ShoppingCart.dart';
-import './pages/FirstTab.dart';
+import './pages/MainTab.dart';
 import './pages/ShopTab.dart';
 import './pages/OrderList.dart';
 
 void main(){
   runApp(
       new MaterialApp(
-          title:'tabdemo',
+          title:'仿luckin',
           home:new HomePage()
       )
   );
@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           controller: tabcontroller,
           physics: new NeverScrollableScrollPhysics(),
           children: <Widget>[
-            new FirstTab(),
+            new MainTab(),
             new ShopTab(),
             new OrderList(),
             new ShoppingCart(),

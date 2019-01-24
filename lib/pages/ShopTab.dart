@@ -40,7 +40,9 @@ class _ShopTabState extends State<ShopTab> {
   @override
   void initState() {
     super.initState();
-    getData();
+    setState(() {
+      getData();
+    });
   }
 
   @override
@@ -64,30 +66,35 @@ class _ShopTabState extends State<ShopTab> {
               child: ListView.builder(
                   itemCount: mainTitle.length,
                   itemBuilder: (BuildContext context, int position) {
-                    return new Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        new Container(
-                          width: 140,
-                          height: 60,
-                          child: new Stack(
-                            children: <Widget>[
-                              new Align(
-                                alignment: FractionalOffset.center,
-                                child: new Text(mainTitle[position]),
-                              )
-                            ],
+                    return GestureDetector(
+                      onTap:(){
+                          print(mainTitle[position]);
+                      },
+                      child: new Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          new Container(
+                            width: 140,
+                            height: 60,
+                            child: new Stack(
+                              children: <Widget>[
+                                new Align(
+                                  alignment: FractionalOffset.center,
+                                  child: new Text(mainTitle[position]),
+                                )
+                              ],
+                            ),
                           ),
-                        ),
-                        new Container(
-                          child: new Align(
-                            child: new Container(
-                                color: Color(0xff000000), height: 0.1),
+                          new Container(
+                            child: new Align(
+                              child: new Container(
+                                  color: Color(0xff000000), height: 0.1),
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     );
                   }),
             ),
@@ -193,9 +200,7 @@ class _ShopTabState extends State<ShopTab> {
                               Padding(
                                   padding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                                   child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    mainAxisSize: MainAxisSize.min,
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: <Widget>[
                                       new Text("￥27",
@@ -205,9 +210,9 @@ class _ShopTabState extends State<ShopTab> {
                                       Stack(
                                         children: <Widget>[
                                           Align(
-                                              alignment: Alignment.bottomCenter,
+                                              alignment: Alignment.bottomRight,
                                               child: Padding(
-                                                padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
+                                                padding: EdgeInsets.fromLTRB(130, 0, 10, 0),
                                                 child: Image.asset(
                                                     "images/coffeecool_add_icon.png",
                                                     width: 20,
@@ -242,11 +247,14 @@ class _ShopTabState extends State<ShopTab> {
     rootBundle.loadString('assets/data/Goods.json').then((value) {
       Map countyMap = json.decode(value);
       List list = countyMap['goods'];
-      list.forEach((value) {
-        _coffeeList
-            .add(CoffeeInfo(name: value['name'], tagIndex: value['tagIndex']));
+      setState(() {
+        list.forEach((value) {
+          _coffeeList
+              .add(CoffeeInfo(name: value['name'], tagIndex: value['tagIndex']));
+        });
       });
     });
+
   }
 
   void _onSusTagChanged(String tag) {

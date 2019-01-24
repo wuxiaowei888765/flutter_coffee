@@ -11,7 +11,6 @@ class _MineState extends State<Mine> {
   Widget build(BuildContext context) {
     return new Scaffold(
       body: Container(
-
         child: new Column(
           children: <Widget>[
             new Container(
