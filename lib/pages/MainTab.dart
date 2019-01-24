@@ -28,9 +28,10 @@ class _MainTabState extends State<MainTab> {
                   pagination: new SwiperPagination(
                       builder: DotSwiperPaginationBuilder(
                     color: Colors.black54,
+                    size: 5,
+                    activeSize: 5,
                     activeColor: Colors.white,
                   )),
-//                  control: new SwiperControl(),
                   scrollDirection: Axis.horizontal,
                   autoplay: true,
                   onTap: (index) => print('点击了第$index个'),
@@ -57,14 +58,14 @@ class _MainTabState extends State<MainTab> {
                     Padding(
                       padding: EdgeInsets.fromLTRB(0, 20, 20, 0),
                       child: Container(
-                          width: 100,
-                          height: 40,
+                          width: 90,
+                          height: 35,
                           decoration: new BoxDecoration(
                             border: new Border.all(
                                 width: 1, color: Color(0xff7EA7D1)),
                             color: Color(0xffffffff),
                             borderRadius:
-                            new BorderRadius.all(new Radius.circular(20.0)),
+                                new BorderRadius.all(new Radius.circular(20.0)),
                           ),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -74,9 +75,9 @@ class _MainTabState extends State<MainTab> {
                               Padding(
                                 padding: EdgeInsets.fromLTRB(1, 1, 0, 1),
                                 child: Container(
-                                  width: 50,
+                                  width: 43,
                                   height: 40,
-                                  padding: EdgeInsets.fromLTRB(10, 8, 0, 0),
+                                  padding: EdgeInsets.fromLTRB(8, 6, 0, 0),
                                   decoration: new BoxDecoration(
                                     border: new Border.all(
                                         width: 1, color: Color(0xff7EA7D1)),
@@ -84,14 +85,22 @@ class _MainTabState extends State<MainTab> {
                                     borderRadius: new BorderRadius.all(
                                         new Radius.circular(20.0)),
                                   ),
-                                  child: new Text("自提",style: TextStyle(color: Color(0xffffffff)),),
+                                  child: new Text(
+                                    "自提",
+                                    style: TextStyle(
+                                        color: Color(0xffffffff), fontSize: 12),
+                                  ),
                                 ),
                               ),
                               Container(
-                                width: 45,
+                                width: 43,
                                 height: 40,
-                                padding: EdgeInsets.fromLTRB(3, 10, 10, 0),
-                                child: new Text("外送",style: TextStyle(color: Color(0xff7EA7D1)),),
+                                padding: EdgeInsets.fromLTRB(6, 8, 0, 0),
+                                child: new Text(
+                                  "外送",
+                                  style: TextStyle(
+                                      color: Color(0xff7EA7D1), fontSize: 12),
+                                ),
                               ),
                             ],
                           )),
@@ -104,7 +113,8 @@ class _MainTabState extends State<MainTab> {
                     margin: const EdgeInsets.fromLTRB(20, 20, 20, 0),
                     child: new Align(
                       alignment: FractionalOffset.bottomCenter,
-                      child: new Container(color: Color(0xff000000),height: 0.1),
+                      child:
+                          new Container(color: Color(0xff000000), height: 0.1),
                     ),
                   ),
                 ),
