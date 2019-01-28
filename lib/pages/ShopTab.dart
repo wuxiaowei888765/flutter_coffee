@@ -35,8 +35,10 @@ int _itemHeight = 100;
 int _suspensionHeight = 40;
 List<CoffeeInfo> _coffeeList = List();
 var _suspensionTag = "猜你喜欢";
+var isShowLastLine = false;
 
 class _ShopTabState extends State<ShopTab> {
+
   @override
   void initState() {
     super.initState();
@@ -117,16 +119,17 @@ class _ShopTabState extends State<ShopTab> {
   }
 
   Widget _buildSusWidget(String susTag) {
-    susTag = (susTag);
     return Container(
         height: _suspensionHeight.toDouble(),
         padding: const EdgeInsets.only(left: 15.0),
         color: Color(0xffffffff),
         alignment: Alignment.centerLeft,
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.max,
           children: <Widget>[
-            Expanded(
-              flex: 2,
+            Container(
               child: Text(
                 '$susTag',
                 softWrap: false,
@@ -137,8 +140,9 @@ class _ShopTabState extends State<ShopTab> {
               ),
             ),
             Expanded(
-              flex: 7,
+              flex: 6,
               child: Container(
+                margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
                 color: Color(0xff999999),
                 height: 0.3,
               ),
@@ -230,11 +234,11 @@ class _ShopTabState extends State<ShopTab> {
                   ),
                 ),
                 Offstage(
-                  offstage : false,
+                  offstage : isShowLastLine,
                   child: Container(
                     margin: EdgeInsets.fromLTRB(15, 0, 15, 0),
                     color: Color(0xff999999),
-                    height: 0.2,
+                    height: 0.1,
                   ),
                 )
               ],
@@ -248,6 +252,7 @@ class _ShopTabState extends State<ShopTab> {
       Map countyMap = json.decode(value);
       List list = countyMap['goods'];
       setState(() {
+        _coffeeList.clear();
         list.forEach((value) {
           _coffeeList
               .add(CoffeeInfo(name: value['name'], tagIndex: value['tagIndex']));

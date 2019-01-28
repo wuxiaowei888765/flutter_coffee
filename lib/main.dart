@@ -63,11 +63,36 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             indicatorColor:Colors.white,
             controller: tabcontroller,
             tabs: <Tab>[
-              new Tab(text:appBottomTitles[0],icon: getTabIcon(0)),
-              new Tab(text:appBottomTitles[1],icon: getTabIcon(1)),
-              new Tab(text:appBottomTitles[2],icon: getTabIcon(2)),
-              new Tab(text:appBottomTitles[3],icon: getTabIcon(3)),
-              new Tab(text:appBottomTitles[4],icon: getTabIcon(4)),
+              new Tab(child: Column(
+                children: <Widget>[
+                  getTabIcon(0),
+                  Text(appBottomTitles[0],style: new TextStyle(fontSize: 11),),
+                ],
+              ),),
+              new Tab(child: Column(
+                children: <Widget>[
+                  getTabIcon(1),
+                  Text(appBottomTitles[1],style: new TextStyle(fontSize: 11),),
+                ],
+              ),),
+              new Tab(child: Column(
+                children: <Widget>[
+                  getTabIcon(2),
+                  Text(appBottomTitles[2],style: new TextStyle(fontSize: 11),),
+                ],
+              ),),
+              new Tab(child: Column(
+                children: <Widget>[
+                  getTabIcon(3),
+                  Text(appBottomTitles[3],style: new TextStyle(fontSize: 11),),
+                ],
+              ),),
+              new Tab(child: Column(
+                children: <Widget>[
+                  getTabIcon(4),
+                  Text(appBottomTitles[4],style: new TextStyle(fontSize: 11),),
+                ],
+              ),),
             ],
             //tab被选中时的颜色，设置之后选中的时候，icon和text都会变色
             labelColor: Color(0xffAAA5B2),
@@ -92,7 +117,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   }
 
   Image getTabImage(path) {
-    return new Image.asset(path, width: 40.0, height: 40.0,fit: BoxFit.fill,);
+    return new Image.asset(path, width: 30.0, height: 30.0,fit: BoxFit.fill,);
   }
 
   Image getTabIcon(int curIndex) {

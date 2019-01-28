@@ -13,6 +13,7 @@ var images = [
   "http://5b0988e595225.cdn.sohucs.com/images/20181011/270308f489644aceacd2d8c3f06a7490.jpeg",
   "http://5b0988e595225.cdn.sohucs.com/images/20181011/2722cf660fdc4254815a51b6f12cee67.jpeg"
 ];
+var isClick = true;
 
 class _MainTabState extends State<MainTab> {
   @override
@@ -74,34 +75,62 @@ class _MainTabState extends State<MainTab> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
-                              Padding(
-                                padding: EdgeInsets.fromLTRB(1, 1, 0, 1),
-                                child: Container(
-                                  width: 43,
-                                  height: 40,
-                                  padding: EdgeInsets.fromLTRB(8, 6, 0, 0),
-                                  decoration: new BoxDecoration(
-                                    border: new Border.all(
-                                        width: 1, color: Color(0xff7EA7D1)),
-                                    color: Color(0xff7EA7D1),
-                                    borderRadius: new BorderRadius.all(
-                                        new Radius.circular(20.0)),
-                                  ),
-                                  child: new Text(
-                                    "自提",
-                                    style: TextStyle(
-                                        color: Color(0xffffffff), fontSize: 12),
+                              GestureDetector(
+                                onTap: (){
+                                  setState(() {
+                                    if(!isClick){
+                                      isClick = !isClick;
+                                    }
+                                  });
+                                  print(isClick);
+                                },
+                                child: Padding(
+                                  padding: EdgeInsets.fromLTRB(1, 1, 1, 1),
+                                  child: Container(
+                                    width: 42,
+                                    height: 40,
+                                    padding: EdgeInsets.fromLTRB(8, 6, 0, 0),
+                                    decoration: new BoxDecoration(
+                                      color: isClick?Color(0xff7EA7D1):Color(0xffffffff),
+                                      borderRadius: new BorderRadius.all(
+                                          new Radius.circular(20.0)),
+                                    ),
+                                    child: new Text(
+                                      "自提",
+                                      style: TextStyle(
+                                          color: isClick?Color(0xffffffff):Color(0xff7EA7D1),
+                                          fontSize: 12),
+                                    ),
                                   ),
                                 ),
                               ),
-                              Container(
-                                width: 43,
-                                height: 40,
-                                padding: EdgeInsets.fromLTRB(6, 8, 0, 0),
-                                child: new Text(
-                                  "外送",
-                                  style: TextStyle(
-                                      color: Color(0xff7EA7D1), fontSize: 12),
+                              GestureDetector(
+                                onTap: (){
+                                  setState(() {
+                                    if(isClick){
+                                      isClick = !isClick;
+                                    }
+                                  });
+                                  print(isClick);
+                                },
+                                child: Padding(
+                                  padding: EdgeInsets.fromLTRB(1, 1, 1, 1),
+                                  child: Container(
+                                    width: 42,
+                                    height: 40,
+                                    padding: EdgeInsets.fromLTRB(8, 6, 0, 0),
+                                    decoration: new BoxDecoration(
+                                      color: isClick?Color(0xffffffff):Color(0xff7EA7D1),
+                                      borderRadius: new BorderRadius.all(
+                                          new Radius.circular(20.0)),
+                                    ),
+                                    child: new Text(
+                                      "外送",
+                                      style: TextStyle(
+                                          color:isClick?Color(0xff7EA7D1):Color(0xffffffff),
+                                          fontSize: 12),
+                                    ),
+                                  ),
                                 ),
                               ),
                             ],

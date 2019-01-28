@@ -19,7 +19,7 @@ class MainItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
+              padding: EdgeInsets.fromLTRB(20, 10, 0, 0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -31,18 +31,18 @@ class MainItem extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(0, 20, 20, 0),
+              padding: EdgeInsets.fromLTRB(0, 10, 20, 0),
               child: Image.asset(
                 imagePath,
-                width: 50,
-                height: 50,
+                width: 40,
+                height: 40,
               ),
             ),
           ],
         ),
         Line(
             showLine: false,
-            margin: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+            margin: const EdgeInsets.fromLTRB(20, 10, 20, 0),
             color: Color(0xff000000),
             height: 0.1),
       ],

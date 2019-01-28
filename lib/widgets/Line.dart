@@ -7,7 +7,7 @@ class Line  extends StatelessWidget{
   final Color color;
   final double height;
 
-  const Line({this.showLine,this.margin,this.color,this.height});
+  const Line({this.showLine = false,this.margin,this.color,this.height});
 
   @override
   Widget build(BuildContext context) {
