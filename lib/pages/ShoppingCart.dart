@@ -6,6 +6,8 @@ class ShoppingCart extends StatefulWidget {
 }
 
 var cofferTitle = ['卡布奇诺纳锐冰', '抹茶拿铁', '摩卡', '榛果拿铁', '拿铁'];
+List<bool> cofferIsSelect = [false,false,false,false,false];
+
 
 class _ShoppingCartState extends State<ShoppingCart> {
   @override
@@ -43,7 +45,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                             ),
                           ),
                           new Text(
-                            "￥54",
+                            getMoney(),
                             style: new TextStyle(fontSize: 24),
                           )
                         ],
@@ -89,11 +91,18 @@ class _ShoppingCartState extends State<ShoppingCart> {
                   new Container(
                     margin: const EdgeInsets.fromLTRB(20, 0, 0, 0),
                     child: new Align(
-                      child: new Image.asset(
-                        position%3==1?'images/icon_cb_pre.png':'images/icon_cb_nor.png',
-                        width: 20,
-                        height: 20,
-                      ),
+                      child: GestureDetector(
+                        onTap: (){
+                          setState(() {
+                            cofferIsSelect[position] = !cofferIsSelect[position];
+                          });
+                        },
+                        child: Image.asset(
+                          cofferIsSelect[position]?'images/icon_cb_pre.png':'images/icon_cb_nor.png',
+                          width: 20,
+                          height: 20,
+                        ),
+                      )
                     ),
                   ),
                   new Container(
@@ -196,5 +205,15 @@ class _ShoppingCartState extends State<ShoppingCart> {
         ],
       ),
     );
+  }
+
+  String getMoney(){
+    var money = 0;
+    for(int i=0;i<cofferIsSelect.length;i++){
+      if(cofferIsSelect[i]){
+        money+=27;
+      }
+    }
+    return "￥$money";
   }
 }
