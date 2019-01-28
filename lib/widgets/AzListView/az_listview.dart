@@ -4,7 +4,7 @@ import 'package:flutter_app/widgets/AzListView/index_bar.dart';
 import 'package:flutter_app/widgets/AzListView/suspension_view.dart';
 
 /// Called to build children for the listview.
-typedef Widget ItemWidgetBuilder(BuildContext context, ISuspensionBean model);
+typedef Widget ItemWidgetBuilder(BuildContext context, ISuspensionBean model,int position);
 
 /// Called to build IndexBar.
 typedef Widget IndexBarBuilder(
@@ -154,7 +154,7 @@ class _AzListViewState extends State<AzListView> {
                     height: widget.header.height.toDouble(),
                     child: widget.header.builder(context));
               }
-              return widget.itemBuilder(context, _cityList[index]);
+              return widget.itemBuilder(context, _cityList[index],index);
             }),
         suspensionWidget: widget.suspensionWidget,
         controller: _scrollController,

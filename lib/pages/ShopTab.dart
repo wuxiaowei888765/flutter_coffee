@@ -22,20 +22,12 @@ var mainTitle = [
   "鲜榨果蔬汁"
 ];
 
-var allGoods = {
-  "a": mainTitle,
-  "b": mainTitle,
-  "c": mainTitle,
-  "d": mainTitle,
-  "e": mainTitle,
-  "f": mainTitle,
-};
 var pinned = true;
 int _itemHeight = 100;
 int _suspensionHeight = 40;
 List<CoffeeInfo> _coffeeList = List();
 var _suspensionTag = "猜你喜欢";
-var isShowLastLine = false;
+var selectItem = 0;
 
 class _ShopTabState extends State<ShopTab> {
 
@@ -69,7 +61,9 @@ class _ShopTabState extends State<ShopTab> {
                   itemBuilder: (BuildContext context, int position) {
                     return GestureDetector(
                       onTap:(){
-                          print(mainTitle[position]);
+                          setState(() {
+                            selectItem = position;
+                          });
                       },
                       child: new Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -77,6 +71,7 @@ class _ShopTabState extends State<ShopTab> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           new Container(
+                            color: selectItem==position?Color(0xffffffff):Color(0xfff7f7f7),
                             height: 50,
                             child: new Stack(
                               children: <Widget>[
@@ -87,12 +82,15 @@ class _ShopTabState extends State<ShopTab> {
                               ],
                             ),
                           ),
-                          new Container(
-                            child: new Align(
-                              child: new Container(
-                                  color: Color(0xff000000), height: 0.1),
+                          Offstage(
+                            offstage: (position == mainTitle.length-1)?true:false,
+                            child: Container(
+                              child: Align(
+                                child: Container(
+                                    color: Color(0xffeeeeee), height: 0.8),
+                              ),
                             ),
-                          ),
+                          )
                         ],
                       ),
                     );
@@ -104,9 +102,9 @@ class _ShopTabState extends State<ShopTab> {
               child: new Container(
                 child: AzListView(
                   data: _coffeeList,
-                  showIndexHint: true,
+                  showIndexHint: false,
                   itemHeight: 100,
-                  itemBuilder: (context, model) => _buildListItem(model),
+                  itemBuilder: (context, model,position) => _buildListItem(model,position),
                   suspensionWidget: _buildSusWidget(_suspensionTag),
                   onSusTagChanged: _onSusTagChanged,
                 ),
@@ -149,7 +147,7 @@ class _ShopTabState extends State<ShopTab> {
         ));
   }
 
-  Widget _buildListItem(CoffeeInfo model) {
+  Widget _buildListItem(CoffeeInfo model,int position) {
     String susTag = model.getSuspensionTag();
     susTag = (susTag);
     return Column(
@@ -173,7 +171,7 @@ class _ShopTabState extends State<ShopTab> {
                           Padding(
                             padding: EdgeInsets.fromLTRB(10, 10, 0, 10),
                             child: Image.network(
-                              "http://qcloud.dpfile.com/pc/ab0e71LQM3Gs9i56J7jf8qistszdLFp_4dQk7hM1I33JksWQ1f7oBWZsxm1DWgcauzFvxlbkWx5uwqY2qcjixFEuLYk00OmSS1IdNpm8K8twhW7bzr4O88Ivp4FuDG0SfCF2ubeXzk49OsGrXt_KYDCngOyCwZK-s3fqawWswzk.jpg",
+                              "http://qcloud.dpfile.com/pc/dUyMrA_aI2EGL41dGvP41CBfJnFEGsdPQE61AVc0CntaPK-u1xGv2EDOXo9h_4jRuzFvxlbkWx5uwqY2qcjixFEuLYk00OmSS1IdNpm8K8twhW7bzr4O88Ivp4FuDG0SfCF2ubeXzk49OsGrXt_KYDCngOyCwZK-s3fqawWswzk.jpg",
                               width: 70,
                               height: 70,
                             ),
@@ -232,7 +230,7 @@ class _ShopTabState extends State<ShopTab> {
                   ),
                 ),
                 Offstage(
-                  offstage : isShowLastLine,
+                  offstage: false,
                   child: Container(
                     margin: EdgeInsets.fromLTRB(15, 0, 15, 0),
                     color: Color(0xff999999),

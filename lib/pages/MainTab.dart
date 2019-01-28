@@ -52,6 +52,8 @@ class _MainTabState extends State<MainTab> {
                             Offstage(
                               offstage: !isClick,
                               child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   Text(
                                     "九都汇店",
