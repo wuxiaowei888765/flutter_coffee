@@ -5,15 +5,6 @@ import './pages/MainTab.dart';
 import './pages/ShopTab.dart';
 import './pages/OrderList.dart';
 
-void main(){
-  runApp(
-      new MaterialApp(
-          title:'仿luckin',
-          home:new HomePage()
-      )
-  );
-}
-
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() =>new _HomePageState();
