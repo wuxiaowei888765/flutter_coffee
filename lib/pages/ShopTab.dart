@@ -63,7 +63,6 @@ class _ShopTabState extends State<ShopTab> {
           new Expanded(
             flex: 2,
             child: new Container(
-              width: 90,
               color: Color(0xffF7F7F7),
               child: ListView.builder(
                   itemCount: mainTitle.length,
@@ -78,8 +77,7 @@ class _ShopTabState extends State<ShopTab> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           new Container(
-                            width: 140,
-                            height: 60,
+                            height: 50,
                             child: new Stack(
                               children: <Widget>[
                                 new Align(

@@ -45,19 +45,42 @@ class _MainTabState extends State<MainTab> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
-                      child: Column(
-                        children: <Widget>[
-                          Text(
-                            "九都汇店",
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold),
-                          ),
-                          Text("距您187m", style: TextStyle(fontSize: 12))
-                        ],
+                      Container(
+                        padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
+                        child: Column(
+                          children: <Widget>[
+                            Offstage(
+                              offstage: !isClick,
+                              child: Column(
+                                children: <Widget>[
+                                  Text(
+                                    "九都汇店",
+                                    style: TextStyle(
+                                        fontSize: 16, fontWeight: FontWeight.bold),
+                                  ),
+                                  Text("距您187m", style: TextStyle(fontSize: 12))
+                                ],
+                              ),
+                            ),
+                            Offstage(
+                              offstage: isClick,
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Text(
+                                    "一个神秘而又变换莫测的地方",
+                                    style: TextStyle(
+                                        fontSize: 16, fontWeight: FontWeight.bold),
+                                  ),
+                                  Text("13800138000 吴先生", style: TextStyle(fontSize: 10,color: Color(0xff7EA7D1))),
+                                  Text("面价满￥55免费配送", style: TextStyle(fontSize: 10,color: Color(0xffDE6E24)))
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
                     Padding(
                       padding: EdgeInsets.fromLTRB(0, 20, 20, 0),
                       child: Container(
@@ -76,13 +99,15 @@ class _MainTabState extends State<MainTab> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
                               GestureDetector(
-                                onTap: (){
+                                onTap: () {
                                   setState(() {
-                                    if(!isClick){
+                                    if (!isClick) {
                                       isClick = !isClick;
                                     }
                                   });
-                                  print(isClick);
+
+                                  ///todo 添加切换处理自提逻辑
+                                  print("处理自提逻辑");
                                 },
                                 child: Padding(
                                   padding: EdgeInsets.fromLTRB(1, 1, 1, 1),
@@ -91,27 +116,33 @@ class _MainTabState extends State<MainTab> {
                                     height: 40,
                                     padding: EdgeInsets.fromLTRB(8, 6, 0, 0),
                                     decoration: new BoxDecoration(
-                                      color: isClick?Color(0xff7EA7D1):Color(0xffffffff),
+                                      color: isClick
+                                          ? Color(0xff7EA7D1)
+                                          : Color(0xffffffff),
                                       borderRadius: new BorderRadius.all(
                                           new Radius.circular(20.0)),
                                     ),
                                     child: new Text(
                                       "自提",
                                       style: TextStyle(
-                                          color: isClick?Color(0xffffffff):Color(0xff7EA7D1),
+                                          color: isClick
+                                              ? Color(0xffffffff)
+                                              : Color(0xff7EA7D1),
                                           fontSize: 12),
                                     ),
                                   ),
                                 ),
                               ),
                               GestureDetector(
-                                onTap: (){
+                                onTap: () {
                                   setState(() {
-                                    if(isClick){
+                                    if (isClick) {
                                       isClick = !isClick;
                                     }
                                   });
-                                  print(isClick);
+
+                                  ///todo 添加切换处理外送逻辑
+                                  print("处理外送逻辑");
                                 },
                                 child: Padding(
                                   padding: EdgeInsets.fromLTRB(1, 1, 1, 1),
@@ -120,14 +151,18 @@ class _MainTabState extends State<MainTab> {
                                     height: 40,
                                     padding: EdgeInsets.fromLTRB(8, 6, 0, 0),
                                     decoration: new BoxDecoration(
-                                      color: isClick?Color(0xffffffff):Color(0xff7EA7D1),
+                                      color: isClick
+                                          ? Color(0xffffffff)
+                                          : Color(0xff7EA7D1),
                                       borderRadius: new BorderRadius.all(
                                           new Radius.circular(20.0)),
                                     ),
                                     child: new Text(
                                       "外送",
                                       style: TextStyle(
-                                          color:isClick?Color(0xff7EA7D1):Color(0xffffffff),
+                                          color: isClick
+                                              ? Color(0xff7EA7D1)
+                                              : Color(0xffffffff),
                                           fontSize: 12),
                                     ),
                                   ),
