@@ -31,7 +31,7 @@ class _SplashState extends State<Splash> {
               alignment: Alignment.bottomRight,
               child: GestureDetector(
                 onTap: (){
-                  Navigator.pushNamed(context, "HomePage");
+                  Navigator.pushNamedAndRemoveUntil(context, "HomePage",(router) => router == null);
                 },
                 child: RaisedButton(child: new Text("跳过")),
               ),
