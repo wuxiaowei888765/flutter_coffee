@@ -293,6 +293,15 @@ class _ShopTabState extends State<ShopTab> {
                   alignment: Alignment.bottomLeft,
                   child: new Padding(padding: EdgeInsets.fromLTRB(10, 0, 0, 20),child: Text("圣诞姜饼人拿铁",style: TextStyle(fontSize: 18,color: Color(0xffffffff)),),)
                 ),
+                Align(
+                  alignment: Alignment.topRight,
+                  child: GestureDetector(
+                    onTap:(){
+                      Navigator.of(context).pop();
+                    },
+                    child: Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 10),child: Image.asset("images/update_close_bt.png",width: 20,height: 20,),),
+                  )
+                )
               ],
             ),
           ),
