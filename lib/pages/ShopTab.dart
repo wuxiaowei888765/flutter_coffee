@@ -30,7 +30,6 @@ var _suspensionTag = "猜你喜欢";
 var selectItem = 0;
 
 class _ShopTabState extends State<ShopTab> {
-
   @override
   void initState() {
     super.initState();
@@ -60,10 +59,10 @@ class _ShopTabState extends State<ShopTab> {
                   itemCount: mainTitle.length,
                   itemBuilder: (BuildContext context, int position) {
                     return GestureDetector(
-                      onTap:(){
-                          setState(() {
-                            selectItem = position;
-                          });
+                      onTap: () {
+                        setState(() {
+                          selectItem = position;
+                        });
                       },
                       child: new Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -71,7 +70,9 @@ class _ShopTabState extends State<ShopTab> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           new Container(
-                            color: selectItem==position?Color(0xffffffff):Color(0xfff7f7f7),
+                            color: selectItem == position
+                                ? Color(0xffffffff)
+                                : Color(0xfff7f7f7),
                             height: 50,
                             child: new Stack(
                               children: <Widget>[
@@ -83,7 +84,9 @@ class _ShopTabState extends State<ShopTab> {
                             ),
                           ),
                           Offstage(
-                            offstage: (position == mainTitle.length-1)?true:false,
+                            offstage: (position == mainTitle.length - 1)
+                                ? true
+                                : false,
                             child: Container(
                               child: Align(
                                 child: Container(
@@ -104,7 +107,8 @@ class _ShopTabState extends State<ShopTab> {
                   data: _coffeeList,
                   showIndexHint: false,
                   itemHeight: 100,
-                  itemBuilder: (context, model,position) => _buildListItem(model,position),
+                  itemBuilder: (context, model, position) =>
+                      _buildListItem(model, position, context),
                   suspensionWidget: _buildSusWidget(_suspensionTag),
                   onSusTagChanged: _onSusTagChanged,
                 ),
@@ -147,21 +151,29 @@ class _ShopTabState extends State<ShopTab> {
         ));
   }
 
-  Widget _buildListItem(CoffeeInfo model,int position) {
+  Widget _buildListItem(CoffeeInfo model, int position, BuildContext context) {
     String susTag = model.getSuspensionTag();
     susTag = (susTag);
-    return Column(
-      children: <Widget>[
-        Offstage(
-          offstage: model.isShowSuspension != true,
-          child: _buildSusWidget(susTag),
-        ),
-        SizedBox(
-            height: _itemHeight.toDouble(),
-            child: Column(
-              children: <Widget>[
-                new Container(
-                  child: Row(
+    return new GestureDetector(
+      onTap: () {
+        showDialog(
+            context: context,
+            builder: (_) => AlertDialog(
+                  content: dialogContent(),
+                contentPadding:EdgeInsets.fromLTRB(0, 0, 0, 0)
+                ));
+      },
+      child: Column(
+        children: <Widget>[
+          Offstage(
+            offstage: model.isShowSuspension != true,
+            child: _buildSusWidget(susTag),
+          ),
+          SizedBox(
+              height: _itemHeight.toDouble(),
+              child: Column(
+                children: <Widget>[
+                  Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -201,7 +213,8 @@ class _ShopTabState extends State<ShopTab> {
                                   padding: EdgeInsets.fromLTRB(10, 0, 0, 10),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: <Widget>[
                                       new Text("￥27",
                                           style: new TextStyle(
@@ -212,7 +225,8 @@ class _ShopTabState extends State<ShopTab> {
                                           Align(
                                               alignment: Alignment.bottomRight,
                                               child: Padding(
-                                                padding: EdgeInsets.fromLTRB(130, 0, 10, 0),
+                                                padding: EdgeInsets.fromLTRB(
+                                                    130, 0, 10, 0),
                                                 child: Image.asset(
                                                     "images/coffeecool_add_icon.png",
                                                     width: 20,
@@ -228,18 +242,18 @@ class _ShopTabState extends State<ShopTab> {
                       ),
                     ],
                   ),
-                ),
-                Offstage(
-                  offstage: false,
-                  child: Container(
-                    margin: EdgeInsets.fromLTRB(15, 0, 15, 0),
-                    color: Color(0xff999999),
-                    height: 0.1,
-                  ),
-                )
-              ],
-            ))
-      ],
+                  Offstage(
+                    offstage: false,
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(15, 0, 15, 0),
+                      color: Color(0xff999999),
+                      height: 0.1,
+                    ),
+                  )
+                ],
+              ))
+        ],
+      ),
     );
   }
 
@@ -250,18 +264,255 @@ class _ShopTabState extends State<ShopTab> {
       setState(() {
         _coffeeList.clear();
         list.forEach((value) {
-          _coffeeList
-              .add(CoffeeInfo(name: value['name'], tagIndex: value['tagIndex']));
+          _coffeeList.add(
+              CoffeeInfo(name: value['name'], tagIndex: value['tagIndex']));
         });
       });
     });
-
   }
 
   void _onSusTagChanged(String tag) {
     setState(() {
       _suspensionTag = tag;
     });
+  }
+
+  Container dialogContent(){
+    return new Container(
+        width: double.maxFinite,
+        height: 500,
+      child: Column(
+        children: <Widget>[
+          Container(
+            height: 150,
+            child: Stack(
+              children: <Widget>[
+                Image.network("http://qcloud.dpfile.com/pc/dUyMrA_aI2EGL41dGvP41CBfJnFEGsdPQE61AVc0CntaPK-u1xGv2EDOXo9h_4jRuzFvxlbkWx5uwqY2qcjixFEuLYk00OmSS1IdNpm8K8twhW7bzr4O88Ivp4FuDG0SfCF2ubeXzk49OsGrXt_KYDCngOyCwZK-s3fqawWswzk.jpg",
+                  width: double.maxFinite,height: 150,fit: BoxFit.fitWidth,),
+                Align(
+                  alignment: Alignment.bottomLeft,
+                  child: new Padding(padding: EdgeInsets.fromLTRB(10, 0, 0, 20),child: Text("圣诞姜饼人拿铁",style: TextStyle(fontSize: 18,color: Color(0xffffffff)),),)
+                ),
+              ],
+            ),
+          ),
+          Container(
+            height: 200,
+            child: CustomScrollView(
+              slivers: <Widget>[
+                new SliverPadding(
+                  padding: const EdgeInsets.all(20.0),
+                  sliver: new SliverList(
+                    delegate: new SliverChildListDelegate(
+                      <Widget>[
+                        Row(
+                          children: <Widget>[
+                            Text("规格",style: new TextStyle(fontSize: 14)),
+                            Container(
+                              height: 25,
+                              width: 60,
+                              margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                              decoration: new BoxDecoration(
+                                border: new Border.all(
+                                    width: 1, color: Color(0xffCEC0B4)),
+                                color: Color(0xffCEC0B4),
+                                borderRadius:
+                                new BorderRadius.all(new Radius.circular(20.0)),
+                              ),
+                              child: Center(
+                                child: Text("大",style: new TextStyle(color: Color(0xffffffff),fontSize: 12),),
+                              ),
+                            )
+                          ],
+                        ),
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                          child: Row(
+                            children: <Widget>[
+                              Text("温度",style: new TextStyle(fontSize: 14)),
+                              Container(
+                                height: 25,
+                                width: 60,
+                                margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                                decoration: new BoxDecoration(
+                                  border: new Border.all(
+                                      width: 1, color: Color(0xffCEC0B4)),
+                                  color: Color(0xffCEC0B4),
+                                  borderRadius:
+                                  new BorderRadius.all(new Radius.circular(20.0)),
+                                ),
+                                child: Center(
+                                  child: Text("冰",style: new TextStyle(color: Color(0xffffffff),fontSize: 12),),
+                                ),
+                              ),
+                              Container(
+                                height: 25,
+                                width: 60,
+                                margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                                decoration: new BoxDecoration(
+                                  border: new Border.all(
+                                      width: 1, color: Color(0xffCEC0B4)),
+                                  color: Color(0xffffffff),
+                                  borderRadius:
+                                  new BorderRadius.all(new Radius.circular(20.0)),
+                                ),
+                                child: Center(
+                                  child: Text("热",style: new TextStyle(color: Color(0xffCEC0B4),fontSize: 12),),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                          child: Row(
+                            children: <Widget>[
+                              Text("糖度",style: new TextStyle(fontSize: 14)),
+                              Container(
+                                height: 25,
+                                width: 60,
+                                margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                                decoration: new BoxDecoration(
+                                  border: new Border.all(
+                                      width: 1, color: Color(0xffCEC0B4)),
+                                  color: Color(0xffCEC0B4),
+                                  borderRadius:
+                                  new BorderRadius.all(new Radius.circular(20.0)),
+                                ),
+                                child: Center(
+                                  child: Text("单糖",style: new TextStyle(color: Color(0xffffffff),fontSize: 12),),
+                                ),
+                              ),
+                              Container(
+                                height: 25,
+                                width: 60,
+                                margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                                decoration: new BoxDecoration(
+                                  border: new Border.all(
+                                      width: 1, color: Color(0xffCEC0B4)),
+                                  color: Color(0xffffffff),
+                                  borderRadius:
+                                  new BorderRadius.all(new Radius.circular(20.0)),
+                                ),
+                                child: Center(
+                                  child: Text("半塘",style: new TextStyle(color: Color(0xffCEC0B4),fontSize: 12),),
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            height: 61,
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: <Widget>[
+                new Offstage(
+                  offstage: false,
+                  child: new Container(
+                    margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    child: new Align(
+                      alignment: FractionalOffset.bottomCenter,
+                      child: new Container(color: Color(0xff000000),height: 0.1),
+                    ),
+                  ),
+                ),
+                new Stack(
+                  children: <Widget>[
+                    new Row(
+                      children: <Widget>[
+                        new Container(
+                          margin: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                          child: new Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              new Row(
+                                children: <Widget>[
+                                  new Text(
+                                    "￥27",
+                                    style: new TextStyle(
+                                        fontSize: 18, color: Color(0xff000000)),
+                                  ),
+                                ],
+                              ),
+                              new Text(
+                                "拿铁￥27+默认奶油￥0",
+                                style: new TextStyle(
+                                    fontSize: 10, color: Color(0xff000000)),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    new Align(
+                      child: new Container(
+                        height: 60,
+                        alignment: FractionalOffset.centerRight,
+                        margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            new Align(
+                              child: new Container(
+                                child: new Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: <Widget>[
+                                    new Container(
+                                      margin: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                                      child: new Image.asset(
+                                          'images/coffeecool_sub_icon.png',
+                                          width: 20,
+                                          height: 20),
+                                    ),
+                                    new Text("1",
+                                        style: new TextStyle(
+                                            fontSize: 16, color: Color(0xff7EA7D1))),
+                                    new Container(
+                                      margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                      child: new Image.asset(
+                                        'images/coffeecool_add_icon.png',
+                                        width: 20,
+                                        height: 20,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                new Offstage(
+                  offstage: false,
+                  child: new Container(
+                    margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    child: new Align(
+                      alignment: FractionalOffset.bottomCenter,
+                      child: new Container(color: Color(0xff000000),height: 0.1),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
 
