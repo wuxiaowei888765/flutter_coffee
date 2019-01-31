@@ -65,6 +65,7 @@ flutter:
    - icon_promo_new.png
    - icon_send_coffee_new.png
    - icon_enterprise_new.png
+   - update_close_bt.png
 
    - assets/data/Goods.json
   # To add assets to your application, add an assets section, like this:
